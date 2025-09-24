@@ -1,0 +1,11 @@
+{
+  "datasets": [
+    {
+      "name": "george",
+      "meta_file_train": "data/metadata.csv",
+      "path": "data",
+      "audio_path": "wavs",
+      "language": "en"
+    }
+  ]
+}

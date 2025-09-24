@@ -1,0 +1,49 @@
+{
+  "model": "xtts_v2",
+  "output_path": "runs/xtts_george",
+  "run_name": "xtts_my_narrator",
+  "mixed_precision": true,
+  "use_cuda": true,
+  "seed": 1234,
+
+  "datasets": "datasets/george.json",
+
+  "trainer": {
+    "max_steps": 20000,
+    "eval_interval": 500,
+    "save_interval": 1000,
+    "log_interval": 50,
+    "precision": "fp16",
+    "grad_accumulation_steps": 2
+  },
+
+  "optim": {
+    "optimizer": "adamw",
+    "lr": 0.0002,
+    "weight_decay": 1e-6
+  },
+
+  "batch_size": 8,
+  "num_loader_workers": 4,
+
+  "audio": {
+    "sample_rate": 24000,
+    "force_resample": false
+  },
+
+  "speaker_adaptation": {
+    "enable": true,
+    "freeze_backbone": true,
+    "trainable_modules": [
+      "speaker_emb", "prosody", "duration_predictor"
+    ]
+  },
+
+  "language": "en",
+
+  "early_stopping": {
+    "enable": true,
+    "patience": 10,
+    "monitor": "val_loss"
+  }
+}

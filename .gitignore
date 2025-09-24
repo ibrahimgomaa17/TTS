@@ -1,0 +1,57 @@
+# --- Python / venv ---
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+*.pyo
+*.egg-info/
+dist/
+build/
+.cache/
+.mypy_cache/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- macOS / Editors ---
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# --- Logs / misc ---
+*.log
+logs/
+coverage/
+.coverage*
+
+# --- Project data ---
+# Keep metadata.csv, ignore heavy audio by default.
+
+
+# If you keep other small CSVs/configs in data/, allow them:
+!data/**/*.csv
+!data/**/*.json
+!data/**/*.yml
+!data/**/*.yaml
+
+# --- Whisper outputs ---
+# transcripts/**
+# If you want to keep transcript .txt, comment the line above and use:
+# transcripts/*.vtt
+# transcripts/*.srt
+# transcripts/*.json
+
+# --- Training artifacts (Coqui / XTTS) ---
+runs/
+checkpoints/
+outputs/
+models/
+downloads/
+
+# --- TTS / HF caches (local) ---
+.huggingface/
+~/.cache/
